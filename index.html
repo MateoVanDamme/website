@@ -6,8 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 
     <!-- My shit -->
     <script defer type="module" src="scripts/mainBLEGeneric.js"></script>
@@ -46,7 +49,7 @@
             </div>
             <div class="col-lg-9 ">
 
-                <p class="lead text-body-secondary">Welcome to my portfolio. This website showcases a curated collection
+                <p class="lead text-white">Welcome to my portfolio. This website showcases a curated collection
                     of projects that I have undertaken throughout my academic journey at UGent, as well as personal
                     projects. Whether you have questions, collaboration opportunities, or simply wish
                     to connect, feel free to reach out to me at mateovandamme1@gmail.com or through my socials below. I
@@ -118,20 +121,22 @@
             <div class="col-lg-4">
                 <!-- System design-->
                 <div class="card bg-dark text-white text-center mb-4">
-                    <img class="card-img-top" src="./images/JDN architectuur.svg" alt="Card image cap">
+                    <img class="card-img-top" src="./images/JDN architectuur.svg" alt="Card image cap" style=" background-color: #fff;
+                    padding: 10px;">
                     <div class="card-body">
                         <h5 class="card-title">System design</h5>
                         <p class="lead">
                             Bachelor project for JDN Group
                         </p>
                         <p class="card-text">
-                            To complete my bacherlor degree at UGent I and a group of students created a software
+                            To complete my bacherlor degree at UGent my team created a software
                             solution for Jan De Nul Group from scratch. A drone flies above buoys with a sensor suite
                             including GPS and a live camera feed. This information is later used to triangulate the GPS
                             coordinates.
                         </p>
-                        <p class="fst-italic text-secondary">
-                            Topics include: system design, computer vision,
+                        <!-- fst-italic text-secondary -->
+                        <p class="tags">
+                            Topics: system design, computer vision,
                             containerisation and
                             machine learning.
                         </p>
@@ -151,6 +156,10 @@
                             In my spare time I also enjoy 3D modeling as a creative outlet. My main
                             focus are funtional
                             parts: parts for my telescope, holders, rasppberry pi cases etc...
+                        </p>
+
+                        <p class="tags">
+                            Topics: CAD-modeling, Fusion360, creativity, design, usability
                         </p>
                     </div>
                 </div>
@@ -189,7 +198,10 @@
                             I got a 18/20 and that a paper that will be published is currently being written based on
                             our
                             research.
-                            Topics: System design, data science, machine learning
+                        <p class="tags">
+                            Topics: system design, data science, machine learning
+                        </p>
+
                         </p>
                     </div>
                 </div>
@@ -207,11 +219,12 @@
                         <p class="card-text">
                             This UGent project uses computer vision algorithms to figure out the location of the user in
                             a museum based on a video. The user walks around the museum and films his surroundings.
-                            Based on this video and a known database of paintings an algorithm caclulates the probable
+                            Based on this video and a pre-existing database of paintings an algorithm calculates the
+                            probable
                             location. An estimation for the path is also presented.
-
-                            Topics include: sytem design, machine learning, computer vision
-
+                        </p>
+                        <p class="tags">
+                            Topics: system design, machine learning, computer vision
                         </p>
                     </div>
                 </div>
@@ -235,13 +248,16 @@
                         <p class="card-text">
                             I've been taking pictures of the nightsky since 2018. I also made my own rotating platform
                             to take long exposure photographs. Build instrutions, code and talks are available here.
-
-                            Topics: pictures, presentation, Open-Source</p>
+                        </p>
+                        <p class="tags">
+                            Topics: pictures, presentation, open-source
+                        </p>
                     </div>
                 </div>
 
                 <!-- Computer graphics -->
-                <div class="card bg-dark text-white text-center mb-4">
+                <div class="card bg-dark text-white text-center mb-4"
+                    onclick="window.location.href='https://www.google.com';" style="cursor: pointer;">
                     <img class="card-img-top" src="./images/computer graphics.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Computer Graphics</h5>
@@ -251,12 +267,16 @@
                         <p class="card-text">
                             This project uses the Three.Js framework to bring a virtual world to life. The project is
                             available
-                            <a href="https://mcabla.github.io/3D-rendering/" target="_blank">online</a> and includes
+                            <a class="link-opacity-75" href="https://mcabla.github.io/3D-rendering/"
+                                target="_blank">online</a> and includes
                             multiple demos.
-                            Besides the purely graphical shaders topics also include boids (swarm behavior), procedural
+                            In addition to purely graphical shaders the projected also touches on other topics such as
+                            boids (swarm behavior), procedural
                             terrain generation with LOD's and general system design.
                             Balancing visual appearance with performance was key.
-                            Topics include Three.js, algorithms, system design and computer graphics
+                        </p>
+                        <p class="tags">
+                            Topics: Three.js, algorithms, system design and computer graphics
                         </p>
                     </div>
                 </div>

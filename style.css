@@ -2,6 +2,26 @@ body {
     background-color: rgba(30, 30, 30, 1.00);
 }
 
+/* Tags at the bottom of cards should get their own font */
+.tags {
+    color: #CCCCCC;
+    font-style: italic;
+}
+
+/* Cards are clickable*/
+.card {
+    cursor: pointer;
+    border: 2px solid transparent; /* Transparent border initially */
+    transition: border-color 0.3s; /* Smooth transition for the border color */
+}
+
+.card:hover {
+    border-color: white; /* White border on hover */
+}
+
+
+
+
 #canvasParent {
     aspect-ratio: 5 / 4;
 }
