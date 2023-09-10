@@ -49,8 +49,8 @@
                 To complete my bacherlor degree at UGent my team created a software solution for Jan De Nul Group from
                 scratch. A drone flies above buoys with a sensor suite including GPS and a live camera feed. This
                 information is later used to triangulate the GPS coordinates. The code is proprietary but I will discuss
-                the general system architecture we came up with below.
-                This project was completed in conjunction with Arthur Isaac, Barre D'Haeseleer, Wout Vercauter, Jordi
+                the general system architecture we settled on. This project was completed in conjunction with Arthur
+                Isaac, Barre D'Haeseleer, Wout Vercauter, Jordi
                 Tijsman. TODO: Add links to their portfolios!
             </p>
         </div>
@@ -147,7 +147,7 @@ padding: 10px;">
 
                             The RTMP server runs in a container on the ground station itself. This setup eliminates
                             latency and instability in the stream. Furthermore, the stream never needs to leave the
-                            local network, enhancing security
+                            local network, enhancing security.
                         </p>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ padding: 10px;">
                             The connection between the Android app and the ground station is established using the
                             WebSocket protocol. This protocol allows bidirectional data traffic between a client and
                             a server. The Android app and the ground station communicate through a WebSocket server
-                            running on the ground station
+                            running on the ground station.
                         </p>
                     </div>
                 </div>
@@ -201,7 +201,7 @@ padding: 10px;">
                         <h5 class="card-title">Computer vision tracking buoys</h5>
                         <p class="card-text">
                             This video shows the computer vision successfully tracking "buoys". Instead of tracking real
-                            buoys over water we opted to simulate them by placing red pieces of papers on a grass field.
+                            buoys over water we opted to simulate them by placing red pieces of paper on a grass field.
                             This way the drone can't be damaged.*
 
 
@@ -224,11 +224,13 @@ padding: 10px;">
                     <div class="card-body">
                         <h5 class="card-title">Masking computer vision</h5>
                         <p class="card-text">
-                            I developed one of the two computer vision used in the project. The masking method uses the
-                            buoy color to extract pixels that might belong to a buoy. Next contours are drawn around
-                            areas of these pixels. If the contours have a sufficiënt area a new "candidate buoy" is
-                            registered in the system. The method is simple but effective. The contours are displayed on
-                            the right hand side.
+                            I developed one of the two computer vision techniques used in the project. The masking
+                            method uses the
+                            buoy color to extract pixels that might belong to a buoy. Subsequently contours are drawn
+                            around
+                            areas of these pixels. If the contours have a sufficient area a new "candidate buoy" is
+                            registered in the system. The method is simple but effective. The contours are displayed in
+                            black and white at the bottom.
                         </p>
 
                     </div>
