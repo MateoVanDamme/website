@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <!-- Bootstrap -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!-- My shit -->
+    <script defer type="module" src="scripts/mainBLEGeneric.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <title>Mateo</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">Mateo portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Don't forget to include the ID! -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./bachelor project.html">Bachelor project</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerSweep.html">Master thesis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">(Sm)Art Path</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">Scene Generation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">Astrophotography</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">3D Printing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="py-2 container mb-1">
+        <div class="d-flex flex-column">
+            <!-- Intro -->
+            <p class="lead text-center">
+                To complete my bacherlor degree at UGent my team created a software solution for Jan De Nul Group from
+                scratch. A drone flies above buoys with a sensor suite including GPS and a live camera feed. This
+                information is later used to triangulate the GPS coordinates. The code is proprietary but I will discuss
+                the general system architecture we came up with below.
+                This project was completed in conjunction with Arthur Isaac, Barre D'Haeseleer, Wout Vercauter, Jordi
+                Tijsman. TODO: Add links to their portfolios!
+            </p>
+        </div>
+
+        <div class="d-flex flex-column">
+            <div class="card text-center mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Problem description</h5>
+                    <p class="card-text">
+                        Jan De Nul is a large dredging company based in Aalst. The company aims to investigate whether
+                        it can determine the exact location of buoys at sea using drones. Currently, buoy measurements
+                        are done manually from boats, which is time-consuming and hazardous. The automation of this
+                        measurement is achieved through a mobile application and a ground station. On the ground
+                        station, buoys are recognized, and their locations are calculated. The drone pilot can control
+                        the drone and read the location of the selected buoy using the application. The buoy's location
+                        is continuously adjusted, and when the buoy appears to drift out of view, the drone is directed
+                        to automatically centralize the image. All software on the ground station can run within a
+                        container.
+                    </p>
+                </div>
+            </div>
+
+            <!-- System design-->
+            <div class="card text-center mb-4">
+                <div class="card-header h5">
+                    Deployment diagram
+                </div>
+                <img class="card-img-top" src="./images/JDN architectuur.svg" alt="Card image cap" style=" background-color: #fff;
+padding: 10px;">
+                <div class="card-body">
+
+                    <p class="lead">
+                        General System Architecture
+                    </p>
+                    <p class="card-text">
+                        Due to the nature of the project, deployment is a complex matter. Buoys need to be positioned
+                        using a drone equipped with a camera. The DJI Phantom 4 Pro lacks onboard processing
+                        capabilities, so it is necessary to perform computer vision on an external device. Therefore,
+                        the project is deployed as a distributed service that spans across multiple physical devices.
+                        The structure of the entire project is clarified by the deployment diagram above.
+                        The system architecture can be roughly divided into two parts, corresponding to the mobile side
+                        consisting of the drone and its associated app, and the ground station. The mobile part
+                        extensively utilizes the proprietary DJI Mobile SDK. The ground station is responsible for all
+                        computationally intensive tasks such as as the computer vision and logic for calculating the GPS
+                        coordinates of the buoys. This part can optionally run fully or partially in containers. Both
+                        parts are discussed individually below due to a "loose coupling" between them.
+                    </p>
+                    <p class="lead">
+                        Smartphone
+                    </p>
+                    <p class="card-text">
+
+
+                        The drone operator controls the drone using a remote controller. All communication between the
+                        DJI drone and the remote controller occurs through a proprietary wireless technology called 'DJI
+                        Lightbridge.' This communication includes, among other things, the video signal from the camera,
+                        the GPS location of the drone, and additional data from the controller. The controller can be
+                        connected to a smartphone using a USB cable. This connection to a smartphone is crucial for the
+                        project because the smartphone runs an app that provides the operator with a live video feed
+                        from the drone's camera, allowing the operator to accurately position the drone above the buoys.
+                        Additionally, the app features a GUI (Graphical User Interface) that enables the operator to
+                        measure the position of a buoy.
+                    </p>
+                    <p class="lead">
+                        Ground station
+                    </p>
+                    <p class="card-text">
+                        The computer vision and the calculation of buoy positions are performed on the ground station.
+                        The ground station has access to more powerful hardware than a smartphone. In principle, any
+                        mid-range laptop can run the project. A discrete graphics card is helpful but not mandatory. The
+                        code on the ground station is entirely written in Python. This makes development more enjoyable
+                        as the entire codebase is written in a single language.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h4>Ground station modules </h4>
+        <div class="py-4 row">
+
+            <div class="col-lg-4">
+                <!-- RTMP-->
+                <div class="card">
+                    <div class="card-header">
+                        RTMP
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            The JDN Drone App sends the video to the ground station. To transmit this live video
+                            stream, the Real-Time Messaging Protocol (RTMP) protocol was chosen. RTMP is used for
+                            first-mile delivery, meaning the video is sent from the producer/encoder to a server.
+                            The live video feed from the JDN Drone App is sent to the ground station for processing.
+                            OpenCV (the computer vision library used) can easily read and process live frames from
+                            an RTMP URL.
+
+                            The RTMP server runs in a container on the ground station itself. This setup eliminates
+                            latency and instability in the stream. Furthermore, the stream never needs to leave the
+                            local network, enhancing security
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Websockets -->
+                <div class="card">
+                    <div class="card-header">
+                        Websockets
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            The connection between the Android app and the ground station is established using the
+                            WebSocket protocol. This protocol allows bidirectional data traffic between a client and
+                            a server. The Android app and the ground station communicate through a WebSocket server
+                            running on the ground station
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <!-- Computer vision -->
+                <div class="card">
+                    <div class="card-header">
+                        Computer vision
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            The computer vision runs on the ground station and utilizes the OpenCV and YOLOv5
+                            libraries. OpenCV is a real-time computer vision library, while YOLOv5 is an object
+                            detection algorithm that utilizes neural networks. The project incorporates two
+                            techniques for extracting buoys from an image: 'Masking' and 'YOLOv5.' The choice of
+                            technique must be configured before the project starts running.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <h4>Demonstration </h4>
+        <div class="py-4 row">
+
+            <div class="col-lg-6">
+                <!-- Demo tracking buoys -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Computer vision tracking buoys</h5>
+                        <p class="card-text">
+                            This video shows the computer vision successfully tracking "buoys". Instead of tracking real
+                            buoys over water we opted to simulate them by placing red pieces of papers on a grass field.
+                            This way the drone can't be damaged.*
+
+
+                        </p>
+                        <p class="card-text"> <small class="text-muted">* in theory</small></p>
+                    </div>
+                    <!-- Tracking buoys demo -->
+                    <video controls autoplay muted loop>
+                        <source
+                            src="https://storage.googleapis.com/mateo-website-bucket/done%20tracking%20buoys%20-%20fixed%20colors.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <!-- Demo computer vision -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Masking computer vision</h5>
+                        <p class="card-text">
+                            I developed one of the two computer vision used in the project. The masking method uses the
+                            buoy color to extract pixels that might belong to a buoy. Next contours are drawn around
+                            areas of these pixels. If the contours have a sufficiënt area a new "candidate buoy" is
+                            registered in the system. The method is simple but effective. The contours are displayed on
+                            the right hand side.
+                        </p>
+
+                    </div>
+                    <!-- Computer vision demo -->
+                    <video controls autoplay muted loop>
+                        <source
+                            src="https://storage.googleapis.com/mateo-website-bucket/Masking%20demo%20cropped%20vertial.mp4"
+                            type="video/mp4">
+                    </video>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>

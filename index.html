@@ -22,7 +22,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">Mateo portfolio</a>
+            <a class="navbar-brand" href="./index.html">Mateo portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,10 +31,12 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./controllerManual.html">Thesis</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./controllerSweep.html">Software projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">Barn door tracker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./bachelor project.html">Bachelor project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerSweep.html">Master thesis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">(Sm)Art Path</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">Scene Generation</a></li>
                     <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">Astrophotography</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./controllerGUI.html">3D Printing</a></li>
                 </ul>
             </div>
         </div>
@@ -120,9 +122,9 @@
         <div class="py-4 row">
             <div class="col-lg-4">
                 <!-- System design-->
-                <div class="card bg-dark text-white text-center mb-4">
-                    <img class="card-img-top" src="./images/JDN architectuur.svg" alt="Card image cap" style=" background-color: #fff;
-                    padding: 10px;">
+                <div class="card clickable text-center mb-4" onclick="window.location.href='./bachelor project.html'">
+                    <img class="card-img-top" src="./images/bachelor project JDN/line of buoys AI.jpg"
+                        alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">System design</h5>
                         <p class="lead">
@@ -142,30 +144,35 @@
                         </p>
                     </div>
                 </div>
-                <!-- 3D-Printing -->
-                <div class="card bg-dark text-white text-center mb-4">
-                    <img class="card-img-top" src="./images/3D-printer.png" alt="Card image cap">
+
+                <!-- Computer graphics -->
+                <div class="card clickable text-center mb-4" onclick="window.location.href='https://www.google.com';">
+                    <img class="card-img-top" src="./images/computer graphics.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">3D-printing</h5>
+                        <h5 class="card-title">Computer Graphics</h5>
                         <p class="lead">
-                            <a href="https://www.printables.com/@MateoVanDamme_195493" target="_blank">Link to my
-                                printables page.</a>
+                            Natural scene in Three.js
                         </p>
-
                         <p class="card-text">
-                            In my spare time I also enjoy 3D modeling as a creative outlet. My main
-                            focus are funtional
-                            parts: parts for my telescope, holders, rasppberry pi cases etc...
+                            The end of year project for my Computer Graphics course. This project uses the Three.Js
+                            framework to bring a virtual world to life. The project is
+                            available
+                            <a href="https://mcabla.github.io/3D-rendering/" target="_blank">online</a> and includes
+                            multiple demos.
+                            In addition to purely graphical shaders the projected also touches on other topics such as
+                            boids (swarm behavior), procedural
+                            terrain generation with LOD's and general system design.
+                            Balancing visual appearance with performance was key.
                         </p>
-
                         <p class="tags">
-                            Topics: CAD-modeling, Fusion360, creativity, design, usability
+                            Topics: Three.js, algorithms, system design and computer graphics
                         </p>
                     </div>
                 </div>
 
 
-                <!-- <div class="bg-dark text-white p-5 rounded text-center mb-4">
+
+                <!-- <div class="p-5 rounded text-center mb-4">
                     <h1 class="display-1">WIP</h1><br />
                     <p class="lead">Welcome to my portfolio.
                         Click any of the cards to get more information
@@ -181,7 +188,7 @@
 
 
                 <!-- Thesis -->
-                <div class="card bg-dark text-white text-center mb-4">
+                <div class="card clickable text-center mb-4">
                     <div style="position: relative; display: inline-block;">
                         <img class="card-img-top" src="./images/thesis/JET_vessel_internal_view_mascot.jpg"
                             alt="Card image cap">
@@ -217,7 +224,7 @@
 
 
                 <!-- Computer vision -->
-                <div class="card bg-dark text-white text-center mb-4">
+                <div class="card clickable text-center mb-4">
                     <img class="card-img-top" src="./images/computer vision/pipeline.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Computer Vision</h5>
@@ -246,7 +253,7 @@
             <div class="col-lg-4">
 
                 <!-- Astrophotography -->
-                <div class="card bg-dark text-white text-center mb-4">
+                <div class="card clickable text-center mb-4">
                     <img class="card-img-top" src="./images/Orion nebula 12 feb.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Astrophotography 🔭</h5>
@@ -254,7 +261,7 @@
                             Pictures, DIY barn door tracker, code
                         </p>
                         <p class="card-text">
-                            I've been taking pictures of the nightsky since 2018. I also made my own rotating platform
+                            I've been taking pictures of the night sky since 2018. I also made my own rotating platform
                             to take long exposure photographs. Build instructions, code and talks are available here.
                         </p>
                         <p class="tags">
@@ -263,33 +270,31 @@
                     </div>
                 </div>
 
-                <!-- Computer graphics -->
-                <div class="card bg-dark text-white text-center mb-4"
-                    onclick="window.location.href='https://www.google.com';" style="cursor: pointer;">
-                    <img class="card-img-top" src="./images/computer graphics.png" alt="Card image cap">
+                <!-- 3D-Printing -->
+                <div class="card clickable text-center mb-4">
+                    <img class="card-img-top" src="./images/3D-printer.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Computer Graphics</h5>
+                        <h5 class="card-title">3D printing</h5>
                         <p class="lead">
-                            Final year project for my Computer Graphics course
+                            <a href="https://www.printables.com/@MateoVanDamme_195493" target="_blank">Link to my
+                                printables page.</a>
                         </p>
+
                         <p class="card-text">
-                            This project uses the Three.Js framework to bring a virtual world to life. The project is
-                            available
-                            <a href="https://mcabla.github.io/3D-rendering/" target="_blank">online</a> and includes
-                            multiple demos.
-                            In addition to purely graphical shaders the projected also touches on other topics such as
-                            boids (swarm behavior), procedural
-                            terrain generation with LOD's and general system design.
-                            Balancing visual appearance with performance was key.
+                            In my spare time I also enjoy 3D modeling as a creative outlet. My main
+                            focus are functional
+                            parts: parts for my telescope, holders, rasppberry pi cases etc...
                         </p>
+
                         <p class="tags">
-                            Topics: Three.js, algorithms, system design and computer graphics
+                            Topics: CAD-modeling, Fusion360, creativity, design, usability
                         </p>
                     </div>
                 </div>
 
+
                 <!-- Write and read values  -->
-                <div hidden="hidden" class="card bg-dark text-white text-center mb-4">
+                <div hidden="hidden" class="card text-center mb-4">
                     <div class="card-header">
                         <h3>Write and read data </h3>
                     </div>

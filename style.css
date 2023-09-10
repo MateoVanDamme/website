@@ -8,14 +8,16 @@ body {
     font-style: italic;
 }
 
-/* Cards are clickable*/
-.card {
-    cursor: pointer;
+.card{
     border: 2px solid transparent; /* Transparent border initially */
+}
+/* Cards are clickable*/
+.card.clickable {
+    cursor: pointer;
     transition: border-color 0.3s; /* Smooth transition for the border color */
 }
 
-.card:hover {
+.card.clickable:hover {
     border-color: white; /* White border on hover */
 }
 
