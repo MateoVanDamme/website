@@ -107,7 +107,6 @@
 
             </div>
 
-
             <div class="d-flex gap-2 mb-3 justify-content-center align-items-center">
 
                 <div class="lead">
@@ -179,30 +178,6 @@
                     </div>
                 </div>
 
-                <div class="card text-center mb-4">
-                    <div class="card-header h5">
-                        Localization algorithm overview
-                    </div>
-
-                    <img class="card-img-top" src="./images/art path/flowchart - localization algorithm.png"
-                        alt="Card image cap" style=" background-color: #fff;padding: 40px;">
-
-
-                    <div class="card-body">
-
-                        <p class="lead">
-                            General System Architecture
-                        </p>
-                        <p class="card-text">
-                            Lorem Ipsum.
-                        </p>
-
-                    </div>
-                </div>
-
-
-
-
             </div>
 
             <div class="col-lg-6">
@@ -230,31 +205,147 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Demo (Sm)Art Path - demonstration - route 3 -->
+        <div class="card mb-4 text-center">
+            <div class="card-body">
+                <h5 class="card-title">Demonstration video</h5>
+                <p class="card-text">
+                    This video features a demonstration of the (Sm)Art Path project, showcasing the indoor localization
+                    estimation algorithm applied to Route 3. The input video is processed in real-time, accurately
+                    determining the cameraman's current most likely exhibit hall and estimating the path taken by the
+                    visitor.
+                </p>
+
+            </div>
+            <!-- Video -->
+            <div class="ratio ratio-16x9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/egIZzmanUAQ?si=62mHWKeJGFhaXhsX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+
+        <h4>Algorithms discussion</h4>
+
+        <div class="py-4 row">
+            <div class="col-lg-6">
+
+                <!-- Painting detection step -->
+                <div class="card mb-4">
+                    <img class="card-img-top" src="./images/art path/pipeline.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center ">Painting detection algorithm</h5>
+                        <p class="lead text-center ">
+                            Image processing steps to extract a painting
+                        </p>
+                        <p class="card-text">
+                            Detection is used to retrieve paintings from images. The process has the following six
+                            steps:
+                        <ol>
+                            <li><strong>Lens correction:</strong> To start, the incoming frame is corrected for the
+                                lens's intrinsic parameters. This correction eliminates effects such as fisheye
+                                distortion and other optical aberrations.</li>
+                            <li><strong>Canny edge detection:</strong> Initially, a Canny edge detector is applied to
+                                identify sharp edges in the images.</li>
+                            <li><strong>Dilation:</strong> Some detected edges may not form consistent straight lines,
+                                leading to irregular contours. Dilation is employed to bridge gaps between line
+                                segments, creating smoother, more continuous shapes.</li>
+                            <li><strong>Finding contours:</strong> Dilated edges are used to locate contours, connecting
+                                points with similar intensity or color. This step relies on Suzuki's method.</li>
+                            <li><strong>Filtering contours:</strong> Multiple contours may be identified in each image.
+                                To isolate paintings, the results are sorted by area, prioritizing larger regions.
+                                Additionally, only contours with four points, resembling rectangular shapes, are
+                                considered. Contours proceed to the next stage only if they exhibit convexity.</li>
+                            <li><strong>Homography:</strong> Following contour filtering, a homography transformation
+                                rectifies the selected contour, producing a standardized painting representation
+                                suitable for matching.</li>
+                        </ol>
+
+                        The result of the Canny Edge Detection, contour selection and homography can be seen in the
+                        image above.
+                        </p>
+
+
+                    </div>
+                </div>
+
 
                 <div class="card text-center mb-4">
                     <div class="card-header h5">
-                        General algorithm overview
+                        Localization algorithm overview
                     </div>
-
-                    <img class="card-img-top" src="./images/art path/flowchart - brief.png" alt="Card image cap"
-                        style=" background-color: #fff;padding: 40px;">
-
-
+                    <img class="card-img-top" src="./images/art path/flowchart - localization algorithm.png"
+                        alt="Card image cap" style=" background-color: #fff;padding: 40px;">
                     <div class="card-body">
-
                         <p class="lead">
                             General System Architecture
                         </p>
                         <p class="card-text">
                             Lorem Ipsum.
                         </p>
-
                     </div>
                 </div>
 
-            </div>
-        </div>
 
+
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Localization quick explanation -->
+
+                <div class="card mb-4">
+                    <img class="card-img-top" src="./images/art path/path.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Localization algorithm</h5>
+                        <p class="lead text-center">
+                            Custom 'budget based' algorithm
+                        </p>
+                        <p class="card-text">
+                            While hidden Markov chains are a standard choice for solving this localization challenge,
+                            we pursued a distinct 'budget'-based localization algorithm. This decision was motivated by
+                            our interest in exploring a novel approach. To facilitate feature matching, keypoints and
+                            descriptors for all database images are computed using SIFT. This computation occurs once
+                            during an initial application run since the database images remain static.
+
+                            When a new painting is detected, keypoints and descriptors are calculated for it, so the
+                            database can be searched for matches using a BF matcher and a distance metric.
+
+                            To optimize matching performance, the application first attempts to match against the best
+                            match for the previous frame. If similarities are insufficient, the search expands to
+                            consider all paintings in the same room, and if that also fails, the entire database.
+                            <br><br>
+                            For a more comprehensive explanation into our custom 'budget'-based localization algorithm,
+                            please refer to the full report.
+                        </p>
+                        The image above showcases an example for an estimated path calculated using the localization
+                        algorithm.
+                    </div>
+                </div>
+
+                <div class="card text-center mb-4">
+                    <div class="card-header h5">
+                        General algorithm overview
+                    </div>
+                    <img class="card-img-top" src="./images/art path/flowchart - brief.png" alt="Card image cap"
+                        style=" background-color: #fff;padding: 40px;">
+                    <div class="card-body">
+                        <p class="lead">
+                            General System Architecture
+                        </p>
+                        <p class="card-text">
+                            Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
