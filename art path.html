@@ -146,6 +146,30 @@
 
         </div>
 
+
+        <!-- Demo (Sm)Art Path - demonstration - route 3 -->
+        <div class="card mb-4 text-center">
+            <div class="card-body">
+                <h5 class="card-title">Demonstration video</h5>
+                <p class="card-text">
+                    This video features a demonstration of the (Sm)Art Path project, showcasing the indoor localization
+                    estimation algorithm applied to Route 3. The input video is processed in real-time, accurately
+                    determining the cameraman's current most likely exhibit hall and estimating the path taken by the
+                    visitor.
+                </p>
+
+            </div>
+            <!-- Video -->
+            <div class="ratio ratio-16x9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/egIZzmanUAQ?si=62mHWKeJGFhaXhsX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+
         <div class="py-4 row">
 
             <div class="col-lg-6">
@@ -166,7 +190,7 @@
                             This technique involves comparing live camera images to a database of
                             annotated images to pinpoint the user's location. The MSK's abundance of
                             distinctive landmarks, its artworks, made it an ideal setting for this endeavor.
-                            Acess was provided to the museum's floor plan and a collection of images of the paintings.
+                            Access was provided to the museum's floor plan and a collection of images of the paintings.
                             <br><br>
                             Using frames of a video stream, the location of the user will be
                             estimated. First, paintings will have to be detected on an image.
@@ -208,27 +232,6 @@
             </div>
         </div>
 
-        <!-- Demo (Sm)Art Path - demonstration - route 3 -->
-        <div class="card mb-4 text-center">
-            <div class="card-body">
-                <h5 class="card-title">Demonstration video</h5>
-                <p class="card-text">
-                    This video features a demonstration of the (Sm)Art Path project, showcasing the indoor localization
-                    estimation algorithm applied to Route 3. The input video is processed in real-time, accurately
-                    determining the cameraman's current most likely exhibit hall and estimating the path taken by the
-                    visitor.
-                </p>
-
-            </div>
-            <!-- Video -->
-            <div class="ratio ratio-16x9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/egIZzmanUAQ?si=62mHWKeJGFhaXhsX"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-
 
 
         <h4>Algorithms discussion</h4>
@@ -248,10 +251,10 @@
                             Detection is used to retrieve paintings from images. The process has the following six
                             steps:
                         <ol>
-                            <li><strong>Lens correction:</strong> To start, the incoming frame is corrected for the
+                            <li><strong>Lens correction:</strong> First, the incoming frame is corrected for the
                                 lens's intrinsic parameters. This correction eliminates effects such as fisheye
                                 distortion and other optical aberrations.</li>
-                            <li><strong>Canny edge detection:</strong> Initially, a Canny edge detector is applied to
+                            <li><strong>Canny edge detection:</strong> A Canny edge detector is applied to
                                 identify sharp edges in the images.</li>
                             <li><strong>Dilation:</strong> Some detected edges may not form consistent straight lines,
                                 leading to irregular contours. Dilation is employed to bridge gaps between line
@@ -270,28 +273,8 @@
                         The result of the Canny Edge Detection, contour selection and homography can be seen in the
                         image above.
                         </p>
-
-
                     </div>
                 </div>
-
-
-                <div class="card text-center mb-4">
-                    <div class="card-header h5">
-                        Localization algorithm overview
-                    </div>
-                    <img class="card-img-top" src="./images/art path/flowchart - localization algorithm.png"
-                        alt="Card image cap" style=" background-color: #fff;padding: 40px;">
-                    <div class="card-body">
-                        <p class="lead">
-                            General System Architecture
-                        </p>
-                        <p class="card-text">
-                            Lorem Ipsum.
-                        </p>
-                    </div>
-                </div>
-
 
 
             </div>
@@ -320,27 +303,9 @@
                             match for the previous frame. If similarities are insufficient, the search expands to
                             consider all paintings in the same room, and if that also fails, the entire database.
                             <br><br>
-                            For a more comprehensive explanation into our custom 'budget'-based localization algorithm,
-                            please refer to the full report.
                         </p>
                         The image above showcases an example for an estimated path calculated using the localization
                         algorithm.
-                    </div>
-                </div>
-
-                <div class="card text-center mb-4">
-                    <div class="card-header h5">
-                        General algorithm overview
-                    </div>
-                    <img class="card-img-top" src="./images/art path/flowchart - brief.png" alt="Card image cap"
-                        style=" background-color: #fff;padding: 40px;">
-                    <div class="card-body">
-                        <p class="lead">
-                            General System Architecture
-                        </p>
-                        <p class="card-text">
-                            Lorem Ipsum.
-                        </p>
                     </div>
                 </div>
             </div>
