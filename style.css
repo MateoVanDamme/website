@@ -8,21 +8,19 @@ body {
     font-style: italic;
 }
 
-.card{
-    border: 2px solid transparent; /* Transparent border initially */
+.card {
+    outline: 2px solid transparent; /* Transparent outline initially */
 }
-/* Cards are clickable*/
+
+/* Cards are clickable */
 .card.clickable {
     cursor: pointer;
-    transition: border-color 0.3s; /* Smooth transition for the border color */
+    transition: outline-color 0.3s; /* Smooth transition for the outline color */
 }
 
 .card.clickable:hover {
-    border-color: white; /* White border on hover */
+    outline-color: white; /* White outline on hover */
 }
-
-
-
 
 #canvasParent {
     aspect-ratio: 5 / 4;
