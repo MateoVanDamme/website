@@ -10,4 +10,3 @@ function addButtonClickListener(buttonId, linkedInUrl) {
     }
 
 }
-
