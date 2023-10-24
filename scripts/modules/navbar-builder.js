@@ -7,6 +7,7 @@ const pages = {
     "(Sm)Art Path": "art-path.html",
     "Scene generation": "scene-generation.html",
     "Quarkus project": "quarkus.html",
+    "Virtual army": "virtual-army.html",
     "Astrophotography": "astrophotography.html",
     "3D Printing": "https://www.printables.com/@MateoVanDamme_195493"
 };
