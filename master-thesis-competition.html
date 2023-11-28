@@ -45,7 +45,7 @@
             <div class="col-lg-8 d-flex ">
                 <div class="d-flex flex-column ">
                     <!-- Intro -->
-                    <p class="lead">
+                    <p class="lead mb-3">
                         Casper en ik zijn enorm blij met jullie te kunnen delen dat onze thesis is
                         genomineerd voor zowel de Future Proef Award als de Eosprijs 2023. Wij zouden het enorm
                         appreciëren als jullie ons zouden willen steunen door te stemmen op onderstaande links.
@@ -58,9 +58,7 @@
                     </p> -->
 
                     <!-- Links -->
-                    <div class="d-flex gap-2 mb-3 justify-content-center">
-
-
+                    <div class="d-flex gap-2 mb-5 justify-content-center">
                         <!-- Future proof award -->
                         <button type="button" id="btnFutureProef" class="btn btn-primary"
                             style="background-color: rgb(238, 48, 47); border:none; ">
@@ -98,10 +96,10 @@
                         duurzaamheidsuitdagingen in België en de wereld. Het wordt dan ook vaak gezien als de
                         heilige graal in de wereld van energieproductie.
                     </p>
-                    <div>
 
-
-                        <div style="margin:auto; position: relative; display: inline-block;">
+                    <!-- Image sun -->
+                    <div class="mb-3" style="text-align: center;">
+                        <div style="position: relative; display: inline-block; max-width: 50%;">
                             <img class="img-fluid" src="./images/master-thesis-competition/christmas-eve-sun.png"
                                 alt="Picture of the sun">
                             <a href="https://flickr.com/photos/106648653@N05/31460091150"
@@ -109,10 +107,11 @@
                                 Paul Stewart CC BY 2.0 DEED
                             </a>
                         </div>
-                        <p class="text-muted text-center">
+                        <p class="text-muted">
                             De zon is een kernfusie reactor
                         </p>
                     </div>
+
                     <p>
                         Een voorbeeld om het wat concreter te maken: de zon is een kernfusiereactor. De
                         gigantische bol plasma ondergaat constant kernfusie, een proces waarbij twee
@@ -142,16 +141,18 @@
                         verwerken van deze materialen is prijzig en veroorzaakt schadelijke emissies. Het is dus des te
                         belangrijker om onderzoek te doen naar ELMs.
                     </p>
-                    <div>
-                        <div style="position: relative; display: inline-block;">
-                            <img class="card-img-top" src="./images/master-thesis/JET_vessel_internal_view_mascot.jpg"
-                                alt="Card image cap">
+
+                    <!-- Image JET -->
+                    <div class="mb-3" style="text-align: center;">
+                        <div style="position: relative; display: inline-block; max-width: 100%;">
+                            <img class="img-fluid" src="./images/master-thesis/JET_vessel_internal_view_mascot.jpg"
+                                alt="JET Tokamak">
                             <a href="https://www.euro-fusion.org/media-library/fusion-experiments/"
-                                style="position: absolute; bottom: 0; right: 0; color: white; background-color: gray; font-size: 0.8em;">
+                                style="position: absolute; bottom: 0; right: 0; color: grey; font-size: 0.8em;">
                                 EUROfusion/CC BY 4.0
                             </a>
                         </div>
-                        <p class="text-muted text-center">
+                        <p class="text-muted">
                             JET Tokamak in the UK
                         </p>
                     </div>
@@ -192,7 +193,7 @@
                         <br>
                         Haems en Van Damme gebruikten in hun thesis twee time series signalen. Enerzijds het
                         “lichtsignaal”, wat aangeeft hoeveel licht het plasma uitzendt op een bepaald moment. Anderzijds
-                        ook het “energie signaal”, dat een schatting aangeeft van hoeveel energie het plasma bevat op
+                        ook het “energiesignaal”, dat een schatting aangeeft van hoeveel energie het plasma bevat op
                         hetzelfde moment.
                     </p>
                     <h6>Hoe herken je een ELM?</h6>
@@ -203,18 +204,22 @@
                         stijl omhoog terwijl het einde gradueel daalt. Met andere woorden, het plasma zal plots veel
                         licht geven en geleidelijk aan zal de lichtsterkte weer zakken tot het normale niveau.
                         <br><br>
-                        Een tweede kenmerkt is dat het energiesignaal daalt tijdens de ELM. Hoe groter de afname in
+                        Een tweede kenmerk is dat het energiesignaal daalt tijdens de ELM. Hoe groter de afname in
                         energie, hoe schadelijker de ELM. Energie kan namelijk niet verdwijnen, de energie uit het
                         plasma komt terecht in de reactorwand die hierdoor beschadigd wordt.
                     </p>
-                    <div style="position: relative; display: inline-block;" class="mb-5">
-                        <img class="card-img-top" src="./images/master-thesis-competition/pulse-trace.jpg"
-                            alt="Green line art">
-                        <a href="https://pixabay.com/illustrations/pulse-trace-healthcare-medicine-163708/"
-                            style="position: absolute; bottom: 0; right: 0; color: grey; font-size: 0.8em;">
-                            AstroGraphix via Pixabay
-                        </a>
+
+                    <!-- Image green line art -->
+                    <div class="mb-3" style="text-align: center;">
+                        <div style="position: relative; display: inline-block; max-width: 60%;">
+                            <img class="img-fluid" src="./images/master-thesis-competition/elm-characteristics.png"
+                                alt="Typical ELM">
+                            
+                        </div>
                     </div>
+
+
+
                     <h5> De methoden</h5>
                     <p>
                         De eerste methode die Haems en Van Damme ontwikkelden is genaamd ‘LoG’, en komt van uit de
@@ -222,7 +227,7 @@
                         afbeelding, maar in wezen is een piek gewoon een speciaal soort vlek in één dimensie.
                         <br><br>
                         Het tweede algoritme dat ze ontwikkelden heet ‘LoGDoG’ en bouwt verder op LoG, maar kijkt ook
-                        naar het energie signaal. Hier worden alleen ELMs gedetecteerd wanneer de energie afneemt.
+                        naar het energiesignaal. Hier worden alleen ELMs gedetecteerd wanneer de energie afneemt.
                         Hiermee verminderden ze de hoeveelheid false positives, wat betekent dat het algoritme denkt dat
                         er een ELM plaatsvindt, terwijl dat in de realiteit niet zo is.
                         <br><br>
@@ -255,6 +260,22 @@
                         wat onderzoek naar ELMs versnelt. Zo slaagden ze er in om een stap te zetten richting duurzame
                         kernfusie.
                     </p>
+
+                    <!-- ITER under construction -->
+                    <!-- https://www.iter.org/album/Construction -->
+                    <div class="mb-3" style="text-align: center;">
+                        <div style="position: relative; display: inline-block; max-width: 100%;">
+                            <img class="img-fluid" src="./images/master-thesis-competition/iter-under-consruction.jpg"
+                                alt="One section of the ITER reactor">
+                            <a href="https://www.iter.org/album/Construction"
+                                style="position: absolute; bottom: 0; right: 0; color: black; background-color: white; opacity: 0.5; font-size: 0.8em;">
+                                Credit © ITER Organization
+                            </a>
+                        </div>
+                        <p class="text-muted">
+                            Dit is een sectie van de toekomstige ITER tokamak die momenteel onder constructie is. 
+                        </p>
+                    </div>
 
                     <h5> Over Casper Haems & Mateo Van Damme</h5>
                     <p>
