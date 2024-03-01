@@ -4,7 +4,7 @@ const pages = {
     "Home": "index.html",
     "Bachelor project": "bachelor-project.html",
     "Master thesis": "master-thesis.html",
-    "Master thesis competition": "master-thesis-competition.html",
+    // "Master thesis competition": "master-thesis-competition.html",
     "(Sm)Art Path": "art-path.html",
     "Scene generation": "scene-generation.html",
     "Quarkus project": "quarkus.html",
