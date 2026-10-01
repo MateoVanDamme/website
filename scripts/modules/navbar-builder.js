@@ -9,8 +9,7 @@ const pages = {
     "Scene generation": "scene-generation.html",
     "Quarkus project": "quarkus.html",
     "Virtual army": "virtual-army.html",
-    "Astrophotography": "astrophotography.html",
-    "3D Printing": "https://www.printables.com/@MateoVanDamme_195493"
+    "Personal website": { href: "https://mateovandamme.com", external: true }
 };
 
 function createNavbar(activePage) {
@@ -23,7 +22,16 @@ function createNavbar(activePage) {
         li.classList.add('nav-item');
         const a = document.createElement('a');
         a.classList.add('nav-link');
-        a.href = pages[page];
+        const target = pages[page];
+        if (typeof target === 'object') {
+            a.href = target.href;
+            if (target.external) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } else {
+            a.href = target;
+        }
         a.textContent = page;
         if (page === activePage) {
             a.classList.add('active');
